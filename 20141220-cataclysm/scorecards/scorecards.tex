@@ -1,0 +1,78 @@
+\documentclass[nobackground]{40k}
+
+
+\newcommand{\scoringbox}{%
+\noindent%
+\fbox{\begin{minipage}{(\linewidth-2em)/2}%
+%\missiontitle{Scorecard}
+%
+\begin{minipage}{1.5in}
+\missionheading{~Attacker:}
+\end{minipage}
+\begin{minipage}{2in}
+\hrule
+\end{minipage}
+
+\bigskip
+\missionheading{~Defender:}
+
+\bigskip
+
+\centering
+\begin{minipage}{3in}
+\noindent\vbox to -4pt{\noindent\hfill\Large\bf\sc\fontfamily{ptm}\selectfont Results\vbox{}}\\
+%
+{\vbox{\small%
+\setlength{\tabcolsep}{2pt}%
+\noindent\begin{tabularx}{\linewidth}{cccX}
+  \hbox to 1.25em{\rotatebox{45}{\small\bf Attacker}}&
+  \hbox to 1.25em{\rotatebox{45}{\small\bf Defender}}&
+  &
+  \multicolumn{1}{c}{\footnotesize\bf Outcomes}
+\\
+  \hline
+%
+  \rescheck&\rescheck& & {\bf Major Victory}\\
+%
+  \rescheck&\rescheck& &
+  {\bf Minor Victory}\\
+%
+\rescheck&\rescheck& &
+{\bf Draw}\\
+\hline \rescheck&\rescheck& &
+{\bf Bonus Point}\\
+\rescheck&\rescheck& &
+{\bf Bonus Point}\\
+\end{tabularx}%
+}}%
+\end{minipage}
+
+\vspace*{9pt}
+\vbox to 0pt{}
+\end{minipage}
+}
+}
+
+
+\begin{document}
+
+\noindent
+\scoringbox
+\hfill
+\scoringbox
+
+\vfill
+
+\noindent
+\scoringbox
+\hfill
+\scoringbox
+
+\vfill
+
+\noindent
+\scoringbox
+\hfill
+\scoringbox
+
+\end{document}
