@@ -1,0 +1,93 @@
+\documentclass[nobackground]{40k}
+
+\newcommand{\checkbox}{\raisebox{-1pt}{\fbox{\hbox to 1em{\vbox to 1em{}}}}}
+
+\newcommand{\letterbox}{\fbox{\hbox to 2em{\vbox to 32pt{}}}}
+
+\newcommand{\scorebox}{\fbox{\hbox to 64pt{\vbox to 64pt{}}}}
+
+\newcommand{\namebox}[1]{\fbox{\hbox to 92pt{\vbox to 64pt{\vfill\it #1}}}}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\newcommand{\scoresheet}{%
+\pagetitle{Scoresheet}
+%\noindent{\Huge\bf Victory Points}
+
+\bigskip\centerline{
+\begin{tabular}{C{96pt} c C{1in} c C{1in} c C{1in} c C{1in}}
+\textbf{\textit{Player Name}} & &
+\textbf{\textit{Primary Objectives}\newline(9 max)} & &
+\textbf{\textit{Secondary Objective}\newline(6 max)} & &
+\textbf{\textit{Tertiary Objectives}\newline(5 max)} & &
+\textbf{\textit{Total\newline(20 max)}}
+\\
+\namebox{You}  & \bf $\Rightarrow$ &
+\scorebox & \bf + &
+\scorebox & \bf + &
+\scorebox & \bf = &
+\scorebox\\
+\\
+\namebox{Opponent}  & \bf $\Rightarrow$ &
+\scorebox & \bf + &
+\scorebox & \bf + &
+\scorebox & \bf = &
+\scorebox
+\end{tabular}
+}
+
+\smallskip%
+\centerline{\emph{Record victory points earned, not the number of
+    objectives claimed!}}
+
+% \smallskip\noindent%
+% Which secondary objective did you play for?~~~~~~
+% \checkbox~\#1~~~~
+% \checkbox~\#2~~~~
+% \checkbox~\#3~~~~
+% \checkbox~\#4
+
+%\bigskip\noindent\textbf{Sportsmanship}
+
+%\vspace*{-4pt}
+
+%\bigskip\noindent{\Huge\bf Sportsmanship}
+
+%\smallskip\noindent%
+%Check the appropriate box below for your experience in this match.  At
+%the end of the day, each player will additionally be asked to rank
+%their opponents by which they enjoyed playing the most.
+
+\smallskip\noindent\hfill
+\begin{minipage}{2in}\bf
+  How much did you enjoy playing your opponent?
+\end{minipage}
+\hfill
+\begin{minipage}{4.75in}
+\smallskip\noindent\raisebox{-2pt}{\checkbox}~ (3) Best game ever---I'd invite them to my house for the rematch!
+
+\smallskip\noindent\raisebox{-2pt}{\checkbox}~ (2) Pretty average game of 40K.
+
+\smallskip\noindent\raisebox{-2pt}{\checkbox}~ (1) Below average game of 40K.
+
+\smallskip\noindent\raisebox{-2pt}{\checkbox}~ (0) I would forfeit before playing them again.
+\end{minipage}
+\hfill
+\hbox to 0pt{}
+
+%\smallskip\noindent%
+%If you checked box \#0, ``I would forfeit,'' please talk to the
+%judge(s) about what went wrong with your match.
+}
+
+
+\begin{document}
+\scoresheet
+
+\vfill
+
+\noindent\scoresheet
+\end{document}

@@ -1,6 +1,16 @@
 %%----------------------------------------------------------------------
+%% Decorations
+%%----------------------------------------------------------------------
+
+\newcommand{\teaser}[1]{\centerline{\emph{#1}}}
+
+%%----------------------------------------------------------------------
 %% Deployment Zones
 %%----------------------------------------------------------------------
+
+\newenvironment{tablesetup}
+{\missionheading{Table Setup}}
+{}
 
 \newcommand{\dawnofwar}%
 {Deployment zones are \textbf{Dawn of War}, as on page~131 of the
@@ -27,13 +37,65 @@
   diagonally opposite corners and opposite long edge.}
 
 %%----------------------------------------------------------------------
-%% Secondaries
+%% Mission Rules
 %%----------------------------------------------------------------------
+
+\newenvironment{missionrules}
+{
+\missionheading{Mission Specific Rules}
+
+The following mission specific rules apply, in addition to those
+applied to all missions in this packet.
+}
+{
+}
+
+\newcommand{\nightfighting}%
+{\missionsubheading{Night Fighting.}  As defined on page~135 of the
+main rulebook: If either player opts for Night Fighting before any
+deployment begins, on a single D6 of 4+ all units have Stealth
+throughout Turn 1.}
+
+
+%%----------------------------------------------------------------------
+%% Scoring
+%%----------------------------------------------------------------------
+
+\newenvironment{scoring}{
+\missionheading{Scoring}
+
+This mission is scored by objectives achieved, as follows.
+}
+{
+\tertiaries
+}
+
+\newenvironment{primaries}
+{
+\missionsubheading{Primary Objectives.}  
+}
+{}
 
 
 %%----------------------------------------------------------------------
 %% Secondaries
 %%----------------------------------------------------------------------
+
+\newenvironment{secondaries}
+{
+\missionsubheading{Secondary Objectives.}
+
+After deployment, both players simultaneously choose and then reveal a
+single secondary objective for themselves from the list below.  Any
+necessary selections are chosen and then revealed with the objective
+unless noted otherwise.  \underline{No more than~6 victory points may
+  be earned via any secondary.}
+
+\begin{itemize}
+}
+{
+\end{itemize}
+}
 
 \newcommand{\seekanddestroy}%
 {\item \textit{Seek and Destroy.}  Choose and declare a Battlefield
@@ -72,6 +134,12 @@
   Objective Secured Unit and your opponent does not, is worth 2
   victory points.}
 
+\newcommand{\breaktheirback}%
+{\item \textit{Break Their Back.}  At game end, each enemy unit that
+  has been eliminated, is falling back, or has at most~25\% of its
+  starting models remaining is broken.  Earn~2 victory points per
+  quartile if at least 25\%, 50\%, and 75\% of your opponent's army by
+  units is broken.}
 
 %%----------------------------------------------------------------------
 %% Tertiaries
