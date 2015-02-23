@@ -1,0 +1,172 @@
+%%----------------------------------------------------------------------
+%%----------------------------------------------------------------------
+\clearpage
+\missiontitle{Mission 3: Into The Maelstrom}
+
+\centerline{\emph{Armies now inextricably entangled in combat, plans
+    and strategies begin to fall apart.}}
+
+\missionheading{Table Setup}
+
+Deployment zones are \textbf{Vanguard Strike}, as defined on page~131
+of the main \emph{Warhammer 40,000} rulebook.  Vanguard Strike may be
+approximated by deploying within a 33.5'' x 50'' table corner
+triangle.  The player that wins the zone roll off may pick any of the
+four corners, and the other player takes that diagonally opposite.
+
+\bigskip%
+After determining deployment zones, roll off on~D6 and in that order
+alternate placing objective markers.  Each player must place their
+first marker in their opponent's deployment zone, their second in
+neither zone, and their third in their own deployment zone.  Label
+these markers~1 through~6, in any fashion.
+
+\bigskip%
+Both players receive their own table of tactical objectives, attached.
+
+
+\missionheading{Mission Specific Rules}
+
+At the start of each of your turns, do the following until you have 3
+tactical objectives in play: Roll a~D66 and consult your tactical
+objective table.  If that objective is already in play for you, has
+been achieved, or is scratched off, roll again.  Similarly, if that
+objective would be provably impossible to score, e.g., your opponent
+has no characters remaining, roll again.  Once a valid objective has
+been rolled, mark it as in play.
+
+Targets cannot be nominated or chosen for a tactical objective marked
+with a $\dagger$ that have already been chosen for a $\dagger$
+objective you have in play.
+
+\smallskip
+At the end of your turns, check the requirements for each tactical
+objective you have in play.  For each fixed-value objective met, mark
+it as achieved and score the associated value in \emph{mission
+  points} (n.b.: not \emph{victory points}).  Tactical objectives with
+a value of X may be kept in play as long as you wish.  At the end of
+your any of your turns while in play they may be marked as achieved
+and scored as indicated.  Once achieved, objectives are no longer
+considered in play and cannot be put in play or scored again.
+
+Multiple objectives can be scored in a turn, caveat that you cannot
+achieve multiple tactical objectives with the same exact title in the
+same turn using the same marker(s) or unit(s).  E.g., to score both
+Storm objectives at once, you would need to simultaneously control two
+separate markers in the enemy deployment zone.
+
+At the end of your turn you may scratch out one of your tactical
+objectives in play to remove it from play.
+
+\smallskip
+Tactical objectives in play, achieved, and scratched out are not secret.
+
+
+\missionheading{Scoring}
+
+This mission is scored by objectives achieved, as follows.
+
+\missionsubheading{Primary Objectives.}
+
+At game end, compare mission points earned through tactical
+objectives achieved and award victory points to the higher and lower
+scorer as follows:
+
+%\definecolor{Gray}{gray}{0.9}
+%\definecolor{DGray}{gray}{0.75}
+\newcolumntype{a}{>{\columncolor{gray!25}}c}
+\newcolumntype{b}{>{\columncolor{gray!50}}r}
+\bigskip\centerline{\setlength{\tabcolsep}{12pt}%
+\begin{tabular}{|b|c|a|c|a|c|a|}
+\hline
+{\bf Difference}     & 0     & 1--2  & 3--4  & 5--6  & 7     & 8+\\
+{\bf Victory Points} & 4 / 4 & 5 / 4 & 6 / 3 & 7 / 2 & 8 / 1 & 9 / 0\\
+\hline
+\end{tabular}}
+
+% \begin{squishitemize}
+%\item Difference of 0 Mission points = 4 - 4
+%\item Difference of 1-2 MP = 5 - 4
+%\item Difference of 3-4 MP = 6 - 3
+%\item Difference of 5-6 MP = 7 - 2
+%\item Difference of 7 MP = 8 - 1
+%\item Difference of 8+ MP = 9 - 0
+%\end{squishitemize}
+
+\missionsubheading{Secondary Objectives.}
+
+After deployment, both players simultaneously choose and then reveal a
+single secondary objective for themselves from the list below.  Any
+necessary selections are chosen and then revealed with the objective
+unless noted otherwise.  \underline{No more than~6 victory points may
+  be earned via any secondary.}
+
+\begin{itemize}
+
+\breaktheirback
+
+\item \textit{Hold the Field.}  At game end, earn~2 victory points
+  for every~2 primary objectives held.
+
+\end{itemize}
+
+\tertiaries
+
+\clearpage
+
+\newcounter{tonum}
+\newcounter{tomajor}
+
+\newcommand\toblocktitle{\setcounter{tomajor}{1}\toblocktitledraw}
+\WithSuffix\newcommand\toblocktitle*{\toblocktitledraw}
+
+\newcommand{\toblocktitledraw}{%
+%\pagetitle{Primary Objectives}
+\renewcommand{\arraystretch}{1.2}%
+\noindent\hfill\begin{tabular}{F{2em}F{1em}F{1em}F{1em}F{1in}m{4.7in}}%4.7in
+%\rowcolor{gray!50}
+{\bf \#} & \hbox to 10pt{\hspace{-2pt}\rotatebox{45}{\bf In Play}}  & \hbox to 10pt{\hspace{-2pt}\rotatebox{45}{\bf Achieved}} & \hbox to 10pt{\hspace{-2pt}\rotatebox{45}{\bf Value}} & {\bf Title} & {\bf Requirement} \\
+\end{tabular}\hfill\hbox to 0pt{}
+}
+
+\newenvironment{toblock}
+{%
+\setcounter{tonum}{1}
+\rowcolors{1}{gray!25}{white}%
+\renewcommand{\arraystretch}{1.3}%
+\noindent\hfill\begin{tabular}{|C{2em}C{1em}C{1em}C{1em}C{1in}m{4.7in}|}
+\hline
+%\rowcolor{gray!50}
+%{\bf \#} & \hbox to 10pt{\hspace{-2pt}\rotatebox{45}{\bf Drawn}}  & \hbox to 10pt{\hspace{-2pt}\rotatebox{45}{\bf Earned}} & \hbox to 10pt{\hspace{-2pt}\rotatebox{45}{\bf Points}} & {\bf Title} & {\bf Requirement} \\
+%\hline
+}
+{%
+\hline
+\end{tabular}\hfill\hbox to 0pt{}
+\stepcounter{tomajor}
+}
+
+\newcommand{\toset}{\setcounter{tonum}{1}\stepcounter{tomajor}}
+
+\newcommand{\cardline}[3]{%
+\thetomajor-\thetonum\stepcounter{tonum} & $\Box$ & $\Box$ & #3 & {\bf #1} & #2\\
+}
+% \raisebox{12pt}{\checkbox} & \raisebox{12pt}{\checkbox} 
+
+\newcommand\tocard[3]{\cardline{#1}{#2}{#3}}
+\WithSuffix\newcommand\tocard*[3]{\cardline{#1}{#2}{#3} [12pt]}
+
+\newcommand{\totitle}[1]{%
+\noindent\begin{tikzpicture}
+\node [blackbox] (box){%
+\vbox to 10pt {\vfil\hbox to \ttlwidth {\hfil%
+\hbox {\color{white}\Large\bf\sc\fontfamily{ptm}\selectfont #1}
+\hfil}\vfil%
+}};%
+\end{tikzpicture}%
+%\vspace*{14pt}
+}
+
+\input{tactical-objectives}
+
+\input{tactical-objectives}
