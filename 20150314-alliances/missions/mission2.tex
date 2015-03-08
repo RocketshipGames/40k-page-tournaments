@@ -1,25 +1,100 @@
 %%----------------------------------------------------------------------
 %%----------------------------------------------------------------------
-\missiontitle{Mission 2: The Cutting Thrust}
+\missiontitle{Mission 2: Those Big Gunz Are Ours!}
 
-\teaser{Hoping to break the gridlock, commanders compel their forces
-  into the heart of the enemy.}
+\teaser{}
 
 %%----------------------------------------------
 \begin{tablesetup}
-  \hammerandanvil
+  \dawnofwar
 
   \bigskip%
-  After determining deployment zones, roll off on D6 and alternate
-  placing a primary objective marker each.  The marker must be placed
-  in your opponent's deployment zone, at least 12'' from every table
-  edge.
+  After determining deployment zones, place two primary objectives
+  markers each 18'' from a short table edge and 24'' from the long
+  edges.  These are designated as command center markers, explained
+  below.  The teams then roll off on~D6 and in that order alternate
+  placing a total of four more objective markers.  Each team must
+  place their first marker in their opponent's deployment zone and
+  their second in their own deployment zone.  Label all of the
+  markers, including the command centers,~1 through~6 in any fashion.
+
+
 \end{tablesetup}
 
 %%----------------------------------------------
 \begin{missionrules}
 
 \nightfighting
+
+\missionsubheading{Orbital Strike.}%
+If a team controls one or both command center markers at the beginning
+of their movement phase, they gain a special shooting attack for that
+turn.  Normal rules for holding markers apply, except that for the
+purposes of Orbital Strike alone the markers cannot be controlled by
+Beasts, Swarms, Vehicles, or Monstrous and Gargantuan Creatures.  Such
+units may still score and contest these markers as usual.
+
+\bigskip%
+If a team controls one marker, at the beginning of the shooting phase
+a model within 3'' of the marker (applying the unit type restrictions
+above, but not necessarily a model in range at the start of movement),
+may fire with the following profile instead of any of its weapons:
+\begin{squishitemize}
+\item Range Unlimited, S6, AP5, Ignore Cover, Blast, Barrage
+\end{squishitemize}
+
+\bigskip%
+If a team controls both markers, at the beginning of the shooting
+phase one model within 3'' of either marker (applying the unit type
+restrictions above, but not necessarily a model in range at the start
+of movement), may fire with either of the following profiles instead
+of any of its weapons:
+\begin{squishitemize}
+\item Range Unlimited, S6, AP5, Ignore Cover, Large Blast, Barrage
+\item Range Unlimited, S6, AP3, Ignore Cover, Blast, Barrage
+\end{squishitemize}
+
+\bigskip%
+Any of these special attacks may target a different unit than the rest
+of the shooter's unit, but do not count for purposes of assault charge
+eligibility.
+
+\missionsubheading{Maelstrom.}%
+At the start of each team turn, the active team does the following
+until it has as many tactical objectives in play as the current turn
+number: Roll a~D66 and consult your tactical objective table, attached
+at the end of this mission packet.  If that objective is already in
+play for you, has been achieved, or is scratched off, roll again.
+Similarly, if that objective would be provably impossible to score,
+e.g., your opponent has no characters remaining, roll again.  Once a
+valid objective has been rolled, mark it as in play.
+
+Targets cannot be nominated or chosen for a tactical objective marked
+with a $\dagger$ that have already been chosen for a $\dagger$
+objective you have in play.
+
+\smallskip%
+At the end of your turns, check the requirements for each tactical
+objective you have in play.  For each fixed-value objective met, mark
+it as achieved and score the associated value in \emph{mission points}
+(n.b.: not \emph{victory points}).  Tactical objectives with a value
+of X may be kept in play as long as you wish.  At the end of any of
+your turns while in play they may be marked as achieved and scored as
+indicated.  Once achieved, objectives are no longer considered in play
+and cannot be put in play or scored again.
+
+Multiple objectives can be scored in a turn, caveat that you cannot
+achieve multiple tactical objectives with the same exact title in the
+same turn using the same marker(s) or unit(s).  E.g., to score both
+Storm objectives at once, you would need to simultaneously control two
+separate markers in the enemy deployment zone.
+
+At the end of your turn you may scratch out one of your tactical
+objectives in play to remove it from play.
+
+\smallskip%
+Tactical objectives in play, achieved, and scratched out are not
+secret.
 
 \end{missionrules}
 
@@ -28,26 +103,32 @@
 \begin{scoring}
   
 \begin{primaries}
-  At game end, control of the primary objective marker in your
-  opponent's deployment zone is worth 3 victory points.  Control of
-  the marker in your own deployment zone is worth 2 victory points.
 
-  In addition, at game end, each unit that has been eliminated, is
-  falling back, or has at most~25\% of its starting models remaining
-  is broken.  Earn~1 victory point per quartile if at least 25\%,
-  50\%, and 75\% of your opponent's army by units is broken.  An
-  additional victory is earned by the player who has had a smaller
-  percentage of the units in their army broken.
+At game end, compare mission points earned through tactical
+objectives achieved and award victory points to the higher and lower
+scorer as follows:
+
+%\definecolor{Gray}{gray}{0.9}
+%\definecolor{DGray}{gray}{0.75}
+\newcolumntype{a}{>{\columncolor{gray!25}}c}
+\newcolumntype{b}{>{\columncolor{gray!50}}r}
+\bigskip\centerline{\setlength{\tabcolsep}{12pt}%
+\begin{tabular}{|b|c|a|c|a|c|a|}
+\hline
+{\bf Difference}     & 0     & 1--2  & 3--4  & 5--6  & 7     & 8+\\
+{\bf Victory Points} & 4 / 4 & 5 / 4 & 6 / 3 & 7 / 2 & 8 / 1 & 9 / 0\\
+\hline
+\end{tabular}}
+
+
 \end{primaries}
 
 \begin{secondaries}
-  \seizeground
+  \breaktheirback
 
-  \reconnaissance
+  \holdthefield
 
   \assassination
-
-  \controlthefield
 \end{secondaries}
 
 \end{scoring}
