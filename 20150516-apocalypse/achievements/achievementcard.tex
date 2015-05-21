@@ -1,0 +1,80 @@
+\pgfmathsetmacro{\achievementcardwidth}{9.25}
+\pgfmathsetmacro{\achievementcardheight}{12.45}
+
+\newcommand{\achievementstripfontsize}{\huge}
+\newcommand{\achievementcaptionfontsize}{\LARGE}
+\newcommand{\achievementtextfontsize}{\small}
+
+\newcommand{\achievementstriptext}%
+  {ACHIEVEMENTS\hspace{0.5em}\rotatebox[origin=c]{-90}{\includegraphics[width=0.6cm]{icon-skull}}}
+
+
+%%----------------------------------------------------------------------
+%%----------------------------------------------------------------------
+\newcommand{\drawachievementcard}{%
+\begin{tikzpicture}%
+  \clip (-0.05, -0.05) rectangle (\achievementcardwidth+.05, \achievementcardheight+.05);
+
+  %%-- Draw the card back and outline
+  \draw[rounded corners=\cardroundingradius,fill=white,draw=none] (0,0)
+    rectangle (\achievementcardwidth,\achievementcardheight);
+  \node[above left] at (\achievementcardwidth+0.1, -0.1)
+    {\includegraphics[width=\achievementcardwidth cm]{background-skull}};
+  \draw[rounded corners=\cardroundingradius] (0,0) rectangle
+    (\achievementcardwidth,\achievementcardheight);
+
+  %%-- Draw the side strip
+  \fill[\stripcolor,rounded corners=\striproundingradius]
+    (\strippadding,\strippadding) rectangle
+    (\strippadding+\stripwidth,\achievementcardheight-\strippadding)
+    node[rotate=90,above left,white,font=\achievementstripfontsize\fontfamily{ptm}\selectfont] {\raisebox{0pt}[15pt][3pt]{\vbox to -18pt{}} \achievementstriptext};
+
+  %%-- Draw the mission info
+    \node[text width=(\achievementcardwidth-\strippadding-\stripwidth-2*\textpadding)*1cm,
+          below right,inner sep=0] at
+          (\strippadding+\stripwidth+\textpadding,\achievementcardheight-\textpadding)
+    {\achievementtextfontsize%
+Directly remove enemy units from play:
+      \begin{tabular}{cp{\linewidth-2em}}
+        $\Box$ $\Box$ $\Box$ & 3 characters.\\
+        $\Box$ $\Box$ $\Box$ & 3 psykers.\\
+        $\Box$ $\Box$ $\Box$ & 3 non-flying vehicles/creatures.\\
+        $\Box$ $\Box$ $\Box$ & 3 flying vehicles/creatures.\\
+        $\Box$ & Superheavy vehicle.\\
+        $\Box$ & Gargantuan creature.\\
+        $\Box$ & Building.\\
+        $\Box$ & Warlord.\\
+      \end{tabular}
+
+Fight the good fight:
+      \begin{tabular}{cp{\linewidth-5em}}
+        $\Box$ $\Box$ $\Box$ & Win 3 close combats.\\
+        $\Box$ $\Box$ $\Box$ & Cause 3 enemy units to fall back.\\
+        $\Box$ & Have a unit wholly within 12''
+                 of the enemy table edge.\\
+        $\Box$ & Have a non-flying model on the highest reachable terrain point.\\
+      \end{tabular}
+
+Control the battlefield:
+      \begin{tabular}{cp{\linewidth-5em}}
+        $\Box$ $\Box$ $\Box$ & Score a particular objective outside your
+                               deployment zone for
+                               3 consecutive turns.\\
+        $\Box$ & Be the first to score a particular objective marker
+                 outside your deployment zone.\\
+        $\Box$ & Score 3 objectives at once.\\
+        $\Box$ & Score an objective marker in the enemy deployment zone.\\
+      \end{tabular}
+
+%      {\achievementcaptionfontsize\sc\fontfamily{ptm}\selectfont\achievementtitle}
+%      \smallskip\noindent\textit{\achievementstory}
+%      \bigskip\noindent\textbf{Mission:} \achievementmission
+%      \bigskip\noindent\textbf{Success:} \achievementsuccess
+    };
+
+\end{tikzpicture}
+}
+
+\newcommand{\achievementcard}{%
+\drawachievementcard%
+}

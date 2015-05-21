@@ -1,0 +1,73 @@
+\pgfmathsetmacro{\missioncardwidth}{9.25}
+\pgfmathsetmacro{\missioncardheight}{12.45}
+
+\newcommand{\missionstripfontsize}{\huge}
+\newcommand{\missioncaptionfontsize}{\LARGE}
+\newcommand{\missiontextfontsize}{\small}
+
+\newcommand{\missionstriptext}%
+  {MISSION\hspace{0.5em}\rotatebox[origin=c]{-90}{\includegraphics[width=0.6cm]{icon-skull}}}
+
+
+%%----------------------------------------------------------------------
+%%----------------------------------------------------------------------
+\newcommand{\drawmissioncard}{%
+\begin{tikzpicture}%
+  \clip (-0.05, -0.05) rectangle (\missioncardwidth+.05, \missioncardheight+.05);
+
+  %%-- Draw the card back and outline
+  \draw[rounded corners=\cardroundingradius,fill=white,draw=none] (0,0)
+    rectangle (\missioncardwidth,\missioncardheight);
+  \node[above left] at (\missioncardwidth+0.1, -0.1)
+    {\includegraphics[width=\missioncardwidth cm]{background-skull}};
+  \draw[rounded corners=\cardroundingradius] (0,0) rectangle
+    (\missioncardwidth,\missioncardheight);
+
+  %%-- Draw the side strip
+  \fill[\stripcolor,rounded corners=\striproundingradius]
+    (\strippadding,\strippadding) rectangle
+    (\strippadding+\stripwidth,\missioncardheight-\strippadding)
+    node[rotate=90,above left,white,font=\missionstripfontsize\fontfamily{ptm}\selectfont] {\raisebox{0pt}[15pt][3pt]{\vbox to -18pt{}} \missionstriptext};
+
+  %%-- Draw the mission info
+    \node[text width=(\missioncardwidth-\strippadding-\stripwidth-2*\textpadding)*1cm,
+          below right,inner sep=0] at
+          (\strippadding+\stripwidth+\textpadding,\missioncardheight-\textpadding)
+    {\missiontextfontsize%
+      Three primary objective markers are placed at fixed locations in
+      each alliance's deployment zone.  The alliances then alternate
+one player at a time placing a secondary objective marker outside their
+deployment zone.
+
+\bigskip
+      After all deployment concludes, declare one of the following as
+      your personal mission:
+      \begin{tabular}{cp{\linewidth-2em}}
+        $\bigcirc$ & {\bf Steadfast Defense:} Score 2 victory points at game end for each
+                     primary objective marker your alliance controls in its
+                     deployment zone.\\
+        $\bigcirc$ & {\bf Wrathful Vanguard:} Score 2 victory points at game end for each
+                     primary objective marker your alliance controls in the opposing deployment
+                     zone.\\
+        $\bigcirc$ & {\bf Causeless Butchers:} Score 2 victory points at game end for the opposing alliance being reduced to each of 75\%, 50\%, and 25\% of its army by units.\\
+      \end{tabular}
+
+      \bigskip%
+      Additionally, score a victory point for up to 9 achievements you
+      personally accomplish.  Use the checkboxes to track progress.
+
+      \smallskip%
+      Objectives are scored every game turn.
+
+%      {\missioncaptionfontsize\sc\fontfamily{ptm}\selectfont\missiontitle}
+%      \smallskip\noindent\textit{\missionstory}
+%      \bigskip\noindent\textbf{Mission:} \missionmission
+%      \bigskip\noindent\textbf{Success:} \missionsuccess
+    };
+
+\end{tikzpicture}
+}
+
+\newcommand{\missioncard}{%
+\drawmissioncard%
+}
