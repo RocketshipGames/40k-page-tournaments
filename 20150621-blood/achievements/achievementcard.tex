@@ -1,0 +1,71 @@
+\pgfmathsetmacro{\achievementcardwidth}{9.25}
+\pgfmathsetmacro{\achievementcardheight}{12.45}
+
+\newcommand{\achievementstripfontsize}{\huge}
+\newcommand{\achievementcaptionfontsize}{\LARGE}
+\newcommand{\achievementtextfontsize}{\small}
+
+\newcommand{\achievementstriptext}%
+  {ACHIEVEMENTS\hspace{0.5em}\rotatebox[origin=c]{-90}{\includegraphics[width=0.6cm]{icon-skull}}}
+
+
+%%----------------------------------------------------------------------
+%%----------------------------------------------------------------------
+\newcommand{\drawachievementcard}{%
+\begin{tikzpicture}%
+  \clip (-0.05, -0.05) rectangle (\achievementcardwidth+.05, \achievementcardheight+.05);
+
+  %%-- Draw the card back and outline
+  \draw[rounded corners=\cardroundingradius,fill=white,draw=none] (0,0)
+    rectangle (\achievementcardwidth,\achievementcardheight);
+  \node[above left] at (\achievementcardwidth+0.1, -0.1)
+    {\includegraphics[width=\achievementcardwidth cm]{background-skull}};
+  \draw[rounded corners=\cardroundingradius] (0,0) rectangle
+    (\achievementcardwidth,\achievementcardheight);
+
+  %%-- Draw the side strip
+  \fill[\stripcolor,rounded corners=\striproundingradius]
+    (\strippadding,\strippadding) rectangle
+    (\strippadding+\stripwidth,\achievementcardheight-\strippadding)
+    node[rotate=90,above left,white,font=\achievementstripfontsize\fontfamily{ptm}\selectfont] {\raisebox{0pt}[15pt][3pt]{\vbox to -18pt{}} \achievementstriptext};
+
+  %%-- Draw the mission info
+    \node[text width=(\achievementcardwidth-\strippadding-\stripwidth-2*\textpadding)*1cm,
+          below right,inner sep=0] at
+          (\strippadding+\stripwidth+\textpadding,\achievementcardheight-\textpadding)
+    {\achievementtextfontsize%
+
+Your name: \underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}
+
+\smallskip
+Evaluate \& check off at each game's end:
+
+      \begin{tabular}{cp{\linewidth-5em}}
+        $\Box$ $\Box$ $\Box$ & Your warlord survived the game.\\[3pt]
+        $\Box$ $\Box$ $\Box$ & The enemy warlord was removed as a casualty, by
+                               any means.\\[3pt]
+        $\Box$ $\Box$ $\Box$ & Your warlord challenged the enemy warlord at
+                               least once.\\[3pt]
+        $\Box$ $\Box$ $\Box$ & Your warlord or an attached unit
+                               eliminated the enemy warlord.\\[3pt]
+        $\Box$ $\Box$ $\Box$ & Your warlord eliminated an opponent in at least
+                               one challenge.\\[3pt]
+        $\Box$ $\Box$ $\Box$ & Your warlord or an attached unit won
+                               at least one close combat.\\[3pt]
+        $\Box$ $\Box$ $\Box$ & Your warlord or an attached unit eliminated at
+                               least one enemy unit through shooting.\\[3pt]
+        $\Box$ $\Box$ $\Box$ & Your warlord or an attached unit scored an
+                               objective marker at least once this game.\\[3pt]
+        $\Box$ $\Box$ $\Box$ & Your warlord is wholly within the enemy
+                               deployment zone.\\[3pt]
+        $\Box$ $\Box$ $\Box$ & Your warlord is at least partially within~6''
+                               of the table center point.\\[3pt]
+      \end{tabular}
+    };
+
+\end{tikzpicture}
+}
+
+\newcommand{\achievementcard}{%
+\drawachievementcard%
+}
